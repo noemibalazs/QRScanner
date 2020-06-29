@@ -11,9 +11,18 @@ class KoinInjection {
 
             fun getDataManagerModule() = listOf(dataManagerModule)
 
+            fun getScanModule() = listOf(scanModule)
+
+            fun getScanViewModel() = listOf(scanViewModel)
+
+            fun getScanResultViewModel() = listOf(scanResultViewModel)
+
             return mutableListOf<Module>().apply {
                 addAll(getScanDaoModule())
                 addAll(getDataManagerModule())
+                addAll(getScanModule())
+                addAll(getScanViewModel())
+                addAll(getScanResultViewModel())
             }
         }
     }

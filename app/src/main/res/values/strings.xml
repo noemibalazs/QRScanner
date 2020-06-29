@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">QR Scanner</string>
     <string name="txt_history">History</string>
+    <string name="txt_scanned_result">Scanned Result</string>
+    <string name="txt_content">Content:</string>
+    <string name="txt_search_on_google">Search on Google</string>
 </resources>

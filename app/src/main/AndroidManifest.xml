@@ -9,6 +9,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
+        android:name=".application.App"
         android:allowBackup="true"
         android:icon="@drawable/qr_code"
         android:label="@string/app_name"
@@ -16,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.ScanResultActivity"
+            android:name=".scanresult.ScanResultActivity"
             android:parentActivityName=".ui.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
