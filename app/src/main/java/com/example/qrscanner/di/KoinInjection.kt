@@ -17,12 +17,15 @@ class KoinInjection {
 
             fun getScanResultViewModel() = listOf(scanResultViewModel)
 
+            fun getHistoryViewModel() = listOf(historyViewModel)
+
             return mutableListOf<Module>().apply {
                 addAll(getScanDaoModule())
                 addAll(getDataManagerModule())
                 addAll(getScanModule())
                 addAll(getScanViewModel())
                 addAll(getScanResultViewModel())
+                addAll(getHistoryViewModel())
             }
         }
     }

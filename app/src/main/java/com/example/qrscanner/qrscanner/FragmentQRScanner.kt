@@ -1,4 +1,4 @@
-package com.example.qrscanner.pages
+package com.example.qrscanner.qrscanner
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_qr_scanner.*
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 import org.koin.android.ext.android.inject
 
-class QRScannerFragment : BaseFragment<ScanViewModel>(), ZXingScannerView.ResultHandler {
+class FragmentQRScanner : BaseFragment<ScanViewModel>(), ZXingScannerView.ResultHandler {
 
     private val dataManager: DataManager by inject()
     private val scanViewModel: ScanViewModel by inject()

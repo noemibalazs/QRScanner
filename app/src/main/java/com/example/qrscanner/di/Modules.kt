@@ -5,6 +5,7 @@ import com.example.qrscanner.database.ScanLocalDataSourceImpl
 import com.example.qrscanner.database.ScanRepository
 import com.example.qrscanner.database.ScanViewModel
 import com.example.qrscanner.helper.DataManager
+import com.example.qrscanner.history.HistoryViewModel
 import com.example.qrscanner.room.ScanDAO
 import com.example.qrscanner.scanresult.ScanResultViewModel
 import org.koin.android.ext.koin.androidApplication
@@ -39,4 +40,13 @@ val scanViewModel = module {
 
 val scanResultViewModel = module {
     viewModel { ScanResultViewModel(scanRepository = get(), dataManager = get()) }
+}
+
+val historyViewModel = module {
+    viewModel {
+        HistoryViewModel(
+            scanRepository = get(),
+            dataManager = get()
+        )
+    }
 }

@@ -4,4 +4,6 @@
     <string name="txt_scanned_result">Scanned Result</string>
     <string name="txt_content">Content:</string>
     <string name="txt_search_on_google">Search on Google</string>
+    <string name="txt_scan_text">Scan result: %s</string>
+    <string name="txt_scan_date">Date: %s</string>
 </resources>
