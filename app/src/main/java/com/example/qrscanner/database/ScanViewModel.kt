@@ -18,7 +18,7 @@ class ScanViewModel(
 
         val job = launch {
             val id = UUID.randomUUID().toString()
-            val timeStamp = SystemClock.uptimeMillis()
+            val timeStamp = System.currentTimeMillis()
             val scanEntity = ScanEntity(id = id, text = scanText, timeStamp = timeStamp)
             scanRepository.addScanToDataBase(scanEntity)
             dataManager.saveScanID(id)

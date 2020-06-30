@@ -6,7 +6,7 @@ import com.example.qrscanner.data.Scan
 class HistoryDiffUtil : DiffUtil.ItemCallback<Scan>() {
 
     override fun areItemsTheSame(oldItem: Scan, newItem: Scan): Boolean {
-        return oldItem.id == newItem.id
+        return oldItem.text == newItem.text
     }
 
     override fun areContentsTheSame(oldItem: Scan, newItem: Scan): Boolean {
