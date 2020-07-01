@@ -69,6 +69,7 @@
                     tools:text="128967789" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/bt_search"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="@{ () -> viewModel.onSearchClicked()}"

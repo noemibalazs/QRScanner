@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import com.example.qrscanner.R
 import com.example.qrscanner.base.BaseFragment
 import com.example.qrscanner.database.ScanViewModel
-import com.example.qrscanner.helper.DataManager
 import com.example.qrscanner.scanresult.ScanResultActivity
 import com.example.qrscanner.util.openActivity
 import com.google.zxing.Result
@@ -17,7 +16,6 @@ import org.koin.android.ext.android.inject
 
 class FragmentQRScanner : BaseFragment<ScanViewModel>(), ZXingScannerView.ResultHandler {
 
-    private val dataManager: DataManager by inject()
     private val scanViewModel: ScanViewModel by inject()
 
     override fun initViewModel(): ScanViewModel = scanViewModel
