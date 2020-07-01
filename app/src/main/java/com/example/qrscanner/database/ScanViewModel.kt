@@ -1,6 +1,5 @@
 package com.example.qrscanner.database
 
-import android.os.SystemClock
 import com.example.qrscanner.base.BaseViewModel
 import com.example.qrscanner.data.ScanEntity
 import com.example.qrscanner.helper.DataManager

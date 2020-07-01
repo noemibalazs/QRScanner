@@ -7,8 +7,8 @@ import com.example.qrscanner.util.SCAN_TABLE
 @Entity(tableName = SCAN_TABLE)
 data class ScanEntity(
 
-    @PrimaryKey
     val id: String,
+    @PrimaryKey
     val text: String,
     val timeStamp: Long
 ) {

@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.qrscanner.base.BaseViewModel
 import com.example.qrscanner.data.Scan
 import com.example.qrscanner.database.ScanRepository
-import com.example.qrscanner.helper.DataManager
 import com.example.qrscanner.helper.ScanMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,13 +30,23 @@ class HistoryViewModel(
             withContext(Dispatchers.Main) {
                 result.map { scanEntity ->
                     val scan = scanMapper.mapEntityToScan(scanEntity)
-                    if (!mutableScanList.contains(scan))
-                        mutableScanList.add(scan)
+                    mutableScanList.add(scan)
                 }
                 _mutableScanList.value = mutableScanList
             }
         }
 
+        addJob(job)
+    }
+
+    fun deleteScanEntityFromDataBase(scan: Scan) {
+        val job = launch {
+            val entity = scanMapper.mapScanToEntity(scan)
+            scanRepository.deleteScanEntity(entity)
+            withContext(Dispatchers.Main) {
+                getAllScannedResult()
+            }
+        }
         addJob(job)
     }
 }

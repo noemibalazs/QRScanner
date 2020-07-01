@@ -29,6 +29,11 @@ class HistoryVH(
                     historyClickListener?.onHistoryClicked(scan.text)
                 }
             })
+
+            clContainer.setOnLongClickListener {
+                historyClickListener?.onLongClickedToDelete(scan)
+                true
+            }
         }
     }
 }

@@ -8,9 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import com.afollestad.materialdialogs.MaterialDialog
 import com.example.qrscanner.R
 import com.example.qrscanner.adapter.HistoryAdapter
 import com.example.qrscanner.base.BaseFragment
+import com.example.qrscanner.data.Scan
 import com.example.qrscanner.databinding.FragmentHistoryBinding
 import com.example.qrscanner.helper.HistoryClickListener
 import org.koin.android.ext.android.inject
@@ -24,6 +26,10 @@ class FragmentHistory : BaseFragment<HistoryViewModel>() {
     private val historyClickListener = object : HistoryClickListener {
         override fun onHistoryClicked(scanText: String) {
             searchOnGoogle(scanText)
+        }
+
+        override fun onLongClickedToDelete(scan: Scan) {
+            shouldDeleteOrNot(scan)
         }
     }
 
@@ -65,6 +71,22 @@ class FragmentHistory : BaseFragment<HistoryViewModel>() {
         historyViewModel.mutableScanList.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+    }
+
+    private fun shouldDeleteOrNot(scan: Scan) {
+        activity?.let {
+            MaterialDialog(it).show {
+                title(R.string.txt_do_you_really)
+                positiveButton(R.string.txt_ok)
+                negativeButton(R.string.txt_cancel)
+                negativeButton {
+                    dismiss()
+                }
+                positiveButton {
+                    historyViewModel.deleteScanEntityFromDataBase(scan)
+                }
+            }
+        }
     }
 
     override fun onDestroy() {
