@@ -17,6 +17,6 @@ Libraries:
 
 Screenshots:
 
-![Screenshot_20200701-155252_QR Scanner](https://user-images.githubusercontent.com/33603567/86252368-cc5ac280-bbbb-11ea-90ad-58d305d0dc1f.jpg)
-
 ![Screenshot_20200701-155236_QR Scanner](https://user-images.githubusercontent.com/33603567/86252386-d2e93a00-bbbb-11ea-831e-bbbab2afbc9c.jpg)
+
+![Screenshot_20200701-155252_QR Scanner](https://user-images.githubusercontent.com/33603567/86252658-28bde200-bbbc-11ea-826c-c9ebe58713da.jpg)
